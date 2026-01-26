@@ -97,21 +97,31 @@ header {
 
 /* Footer */
 
-.f-design {
-  margin-top: auto;
-  padding: 18px 20px;
-  text-align: center;
-  background: linear-gradient(180deg, rgba(3, 8, 9, 0.4), rgba(3, 6, 8, 0.8));
-  color: var(--muted-2);
-  border-top: 1px solid rgba(255, 255, 255, 0.03);
+.footer {
+    margin-top: auto;
+    padding: 1.5rem 0.4rem;
+    background: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid var(--borderclr);
 }
+
 .logoftr {
-  width: 36px;
-  height: 36px;
-  vertical-align: middle;
-  margin-right: 8px;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    background-color: #144044;
+    border: 1px solid cyan;
+    border-radius: 10px;
+    position: absolute;
+    left: 50px;
 }
+
 .logo-text-ftr {
-  font-weight: 700;
-  color: var(--muted);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text2);
+    position: absolute;
+    left: 100px;
 }
