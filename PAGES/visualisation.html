@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="lt">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Funkciju vizualizatorius</title>
+  <link rel="stylesheet" href="../CSS/visualisation.css" />
+  <script src="../JS/script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul class="menu">
+        <img src="../IMG/logo.png" alt="Logo" class="logo">
+        <p class="logo-text">MathFX</p>
+        <li><a href="../index.html">Pradžia</a></li>
+        <li><a href="testai.html">Testai</a></li>
+        <li><a href="visualisation.html"> Funkcijų vizualizatorius</a></li>
+        <li><a href="funkcijos.html">Funkcijos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="v-header">
+    <h1>Funkcijų <span class="v-gradiant">vizualizatorius</span></h1>
+  </div>
+
+  <div class="v-grid">
+    <aside class="v-sidebar">
+      <section class="panel-card">
+        <h2>Funkcijos tipas</h2>
+        <div class="btn-row">
+          <button class="v-design full" data-type="linear">
+            <span>Tiesinė</span>
+          </button>
+          <button class="v-design full" data-type="quadratic">
+            <span>Kvadratinė</span>
+          </button>
+          <button class="v-design full" data-type="sin">
+            <span>Sinusinė</span>
+          </button>
+          <button class="v-design full active" data-type="exp">
+            <span>Eksponentinė</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="panel-card">
+        <h2>Parametrai</h2>
+        <label>Parametras a <span id="aValue" class="val">1.0</span></label>
+        <input type="range" min="-10" max="10" value="1" step="0.1" class="v-slider" id="aRange" />
+
+        <label>Parametras b <span id="bValue" class="val">0.0</span></label>
+        <input type="range" min="-10" max="10" value="0" step="0.1" class="v-slider" id="bRange" />
+      </section>
+
+      <section class="panel-card formula-card">
+        <h2>Formulė</h2>
+        <div class="formulaDisplay"></div>
+      </section>
+    </aside>
+
+    <main class="v-graph-card">
+      <div class="graph-inner">
+        <canvas id="graphCanvas" width="900" height="600"></canvas>
+      </div>
+    </main>
+  </div>
+
+  <div class="footer">
+    <img src="../IMG/logo.png" alt="Logo" class="logoftr">
+    <p class="logo-text-ftr">MathFX</p>
+    <p>&copy; 2026 Matematinės funkcijos. Sukurta mokymui ir pažinimui</p>
+  </div>
+
+</body>
+
+</html>

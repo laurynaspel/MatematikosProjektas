@@ -1,0 +1,249 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+}
+
+/* Fontas */
+
+:root {
+  --bg: #0c0e13;
+  --text: #ecece4;
+  --text2: #b6c2e2;
+  --card: #1d2330;
+  --card2: #0c0d0f6e;
+  --secondary: #0b0f1f;
+  --accent: #131720;
+  --accent2: white;
+  --gradiant: linear-gradient(135deg, #7a4dff 0%, #4ddcff 100%);
+  --borderclr: #b6c2e2;
+}
+
+body {
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial;
+  background: linear-gradient(
+    180deg,
+    rgba(2, 6, 7, 1) 0%,
+    rgba(7, 24, 25, 1) 40%,
+    rgba(6, 10, 12, 1) 100%
+  );
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header / Nav */
+
+header {
+  position: sticky;
+  top: 0;
+  padding: 0.4rem 2rem;
+  background: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--borderclr);
+  z-index: 100;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  font-size: x-large;
+}
+
+.menu a {
+  display: block;
+  padding: 0.9rem 1.2rem;
+  color: var(--text2);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.menu a:hover {
+  background: var(--gradiant);
+  background-clip: text;
+  color: transparent;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  background-color: #144044;
+  border: 1px solid cyan;
+  border-radius: 10px;
+  position: absolute;
+  left: 50px;
+  top: 15px;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text);
+  position: absolute;
+  left: 100px;
+  top: 20px;
+}
+
+
+/* main content */
+
+#content {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../IMG/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.75;
+  mix-blend-mode: normal;
+}
+#content::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(8, 30, 30, 0.35) 0%,
+    rgba(3, 6, 8, 0.7) 65%
+  );
+  pointer-events: none;
+}
+
+/* Content */
+
+.v-header-wrapper {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: var(--max-width);
+  padding: 60px 20px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.v-header h1 {
+  font-size: clamp(48px, 9vw, 120px);
+  line-height: 0.95;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -1px;
+  margin: 0;
+}
+.v-header .v-gradiant {
+  display: inline-block;
+  background: linear-gradient(
+    90deg,
+    var(--cyan),
+    var(--teal) 35%,
+    var(--purple)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.v-sub {
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 500;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  background: rgba(41, 97, 96, 0.12);
+  border: 1px solid rgba(41, 97, 96, 0.22);
+  border-radius: 999px;
+  color: var(--teal);
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+
+.main-btns {
+  margin-top: 28px;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+}
+.btn {
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.btn-primary {
+  background: linear-gradient(
+    90deg,
+    rgba(58, 230, 209, 0.95),
+    rgba(58, 204, 230, 0.96)
+  );
+  color: #042524;
+  box-shadow: 0 8px 30px rgba(40, 200, 180, 0.08);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Footer */
+
+.f-design {
+  padding: 18px 20px;
+  text-align: center;
+  align-content: center;
+  background: linear-gradient(180deg, rgba(3, 8, 9, 0.4), rgba(3, 6, 8, 0.8));
+  color: var(--muted-2);
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  max-width: var(--max-width);
+  
+}
+.logoftr {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: rgba(35, 75, 74, 0.15);
+  padding: 6px;
+  border: 1px solid rgba(60, 220, 200, 0.12);
+}
+
+.logo-text-ftr {
+    font-weight: bold;
+  font-size: 18px;
+  margin-left: 8px;
+  color: var(--muted);
+}

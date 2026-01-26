@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="lt">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Funkcijų testas</title>
+    <script src="../JS/testu.js" defer></script>
+    <link rel="stylesheet" href="../CSS/testu.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <img src="../IMG/logo.png" alt="Logo" class="logo">
+                <p class="logo-text">MathFX</p>
+                <li><a href="../index.html">Pradžia</a></li>
+                <li><a href="testai.html">Testai</a></li>
+                <li><a href="visualisation.html">Funkcijų vizualizatorius</a></li>
+                <li><a href="funkcijos.html">Funkcijos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="start" class="screen active">
+        <h1>📊 Funkcijų<span class="v-gradiant"> testas</span></h1>
+        <p class="center">Pasirink sunkumo lygį</p>
+        <div class="center">
+            <button onclick="startLevel('easy')">🟢 Lengvas</button>
+            <button onclick="startLevel('medium')">🟡 Vidutinis</button>
+            <button onclick="startLevel('hard')">🔴 Sunkus</button>
+        </div>
+    </div>
+
+    <div id="quiz" class="screen">
+        <h2 id="levelTitle"></h2>
+        <form id="quizForm"></form>
+        <div class="center">
+            <button type="button" onclick="finishQuiz()">Baigti testą</button>
+        </div>
+    </div>
+
+    <div id="result" class="screen">
+        <h2>🏁 Rezultatas</h2>
+        <p id="scoreText" class="center"></p>
+        <div class="center">
+            <button onclick="restart()">🔁 Iš naujo</button>
+            <button onclick="nextLevel()">➡️ Kitas lygis</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <img src="../IMG/logo.png" alt="Logo" class="logoftr">
+        <p class="logo-text-ftr">MathFX</p>
+        <p>&copy; 2026 Matematinės funkcijos. Sukurta mokymui ir pažinimui</p>
+    </div>
+</body>
+
+</html>
