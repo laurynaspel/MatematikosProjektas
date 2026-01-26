@@ -31,8 +31,15 @@
         <section class="cards">
             <div class="cards-grid">
 
+                <!-- Tiesinė -->
                 <article class="card">
-                    <div class="card-graphic line-graph"></div>
+                    <div class="card-graphic">
+                        <svg viewBox="0 0 200 120" class="svg-graph">
+                            <line x1="0" y1="60" x2="200" y2="60" class="axis"/>
+                            <line x1="100" y1="0" x2="100" y2="120" class="axis"/>
+                            <line x1="20" y1="100" x2="180" y2="20" class="graph line"/>
+                        </svg>
+                    </div>
                     <div class="card-content">
                         <h3 class="card-title">Tiesinė funkcija</h3>
                         <p class="card-sub">f(x) = mx + b</p>
@@ -41,8 +48,16 @@
                     </div>
                 </article>
 
+                <!-- Atvirkštinė -->
                 <article class="card">
-                    <div class="card-graphic inverse-graph"></div>
+                    <div class="card-graphic">
+                        <svg viewBox="0 0 200 120" class="svg-graph">
+                            <line x1="0" y1="60" x2="200" y2="60" class="axis"/>
+                            <line x1="100" y1="0" x2="100" y2="120" class="axis"/>
+                            <path d="M110 10 C150 40 170 70 190 110" class="graph inverse"/>
+                            <path d="M10 110 C30 70 50 40 90 10" class="graph inverse"/>
+                        </svg>
+                    </div>
                     <div class="card-content">
                         <h3 class="card-title">Atvirkštinio proporcingumo</h3>
                         <p class="card-sub">f(x) = k / x</p>
@@ -51,8 +66,15 @@
                     </div>
                 </article>
 
+                <!-- Laipsninė -->
                 <article class="card">
-                    <div class="card-graphic power-graph"></div>
+                    <div class="card-graphic">
+                        <svg viewBox="0 0 200 120" class="svg-graph">
+                            <line x1="0" y1="60" x2="200" y2="60" class="axis"/>
+                            <line x1="100" y1="0" x2="100" y2="120" class="axis"/>
+                            <path d="M20 100 Q100 20 180 100" class="graph parabola"/>
+                        </svg>
+                    </div>
                     <div class="card-content">
                         <h3 class="card-title">Laipsninė funkcija</h3>
                         <p class="card-sub">f(x) = xⁿ</p>
@@ -61,8 +83,15 @@
                     </div>
                 </article>
 
+                <!-- Šaknies -->
                 <article class="card">
-                    <div class="card-graphic root-graph"></div>
+                    <div class="card-graphic">
+                        <svg viewBox="0 0 200 120" class="svg-graph">
+                            <line x1="0" y1="60" x2="200" y2="60" class="axis"/>
+                            <line x1="100" y1="0" x2="100" y2="120" class="axis"/>
+                            <path d="M20 100 Q60 60 100 20" class="graph parabola"/>
+                        </svg>
+                    </div>
                     <div class="card-content">
                         <h3 class="card-title">Šaknies funkcija</h3>
                         <p class="card-sub">f(x) = √x, f(x) = ±√x</p>
@@ -71,8 +100,15 @@
                     </div>
                 </article>
 
+                <!-- Rodiklinė -->
                 <article class="card">
-                    <div class="card-graphic expo-graph"></div>
+                    <div class="card-graphic">
+                        <svg viewBox="0 0 200 120" class="svg-graph">
+                            <line x1="0" y1="60" x2="200" y2="60" class="axis"/>
+                            <line x1="100" y1="0" x2="100" y2="120" class="axis"/>
+                            <path d="M20 100 C60 90 100 70 180 20" class="graph expo"/>
+                        </svg>
+                    </div>
                     <div class="card-content">
                         <h3 class="card-title">Rodiklinė funkcija</h3>
                         <p class="card-sub">f(x) = aˣ</p>
@@ -81,8 +117,15 @@
                     </div>
                 </article>
 
+                <!-- Logaritminė -->
                 <article class="card">
-                    <div class="card-graphic log-graph"></div>
+                    <div class="card-graphic">
+                        <svg viewBox="0 0 200 120" class="svg-graph">
+                            <line x1="0" y1="60" x2="200" y2="60" class="axis"/>
+                            <line x1="100" y1="0" x2="100" y2="120" class="axis"/>
+                            <path d="M20 100 C60 40 120 30 180 25" class="graph log"/>
+                        </svg>
+                    </div>
                     <div class="card-content">
                         <h3 class="card-title">Logaritminė funkcija</h3>
                         <p class="card-sub">f(x) = logₐx</p>
@@ -91,8 +134,15 @@
                     </div>
                 </article>
 
+                <!-- Trigonometrinė -->
                 <article class="card">
-                    <div class="card-graphic trig-graph"></div>
+                    <div class="card-graphic">
+                        <svg viewBox="0 0 200 120" class="svg-graph">
+                            <line x1="0" y1="60" x2="200" y2="60" class="axis"/>
+                            <line x1="100" y1="0" x2="100" y2="120" class="axis"/>
+                            <path d="M0 60 C25 20, 50 20, 75 60 C100 100, 125 100, 150 60 C175 20, 200 20, 225 60" class="graph trig"/>
+                        </svg>
+                    </div>
                     <div class="card-content">
                         <h3 class="card-title">Trigonometrinės funkcijos</h3>
                         <p class="card-sub">sin x, cos x, tg x</p>
@@ -100,8 +150,16 @@
                         <a href="trigonometrines.html" class="card-link">Sužinoti daugiau →</a>
                     </div>
                 </article>
+
+                <!-- Absoliutinė vertė -->
                 <article class="card">
-                    <div class="card-graphic abs-graph"></div>
+                    <div class="card-graphic">
+                        <svg viewBox="0 0 200 120" class="svg-graph">
+                            <line x1="0" y1="60" x2="200" y2="60" class="axis"/>
+                            <line x1="100" y1="0" x2="100" y2="120" class="axis"/>
+                            <path d="M20 100 L100 20 L180 100" class="graph abs"/>
+                        </svg>
+                    </div>
                     <div class="card-content">
                         <h3 class="card-title">Absoliutinės vertės funkcija</h3>
                         <p class="card-sub">f(x) = |x|</p>
@@ -120,7 +178,6 @@
         <p class="logo-text-ftr">MathFX</p>
         <p>&copy; 2026 Matematinės funkcijos. Sukurta mokymui ir pažinimui</p>
     </div>
-
 </body>
 
 </html>

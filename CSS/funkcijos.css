@@ -1,3 +1,4 @@
+/* --- GLOBAL --- */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,7 +17,6 @@ label {
 }
 
 /* Colors */
-
 :root {
   --bg: #0c0e13;
   --text: #ecece4;
@@ -39,8 +39,7 @@ body {
   flex-direction: column;
 }
 
-/* Header / Nav */
-
+/* --- HEADER / NAV --- */
 header {
   position: sticky;
   height: 70px;
@@ -95,10 +94,8 @@ header {
   top: 20px;
 }
 
-/* Main page */
-
+/* --- MAIN PAGE --- */
 .v-gradiant {
-  background: #06d4d4;
   background: linear-gradient(135deg,
       rgba(6, 212, 212, 1) 0%,
       rgba(135, 21, 143, 1) 57%);
@@ -112,8 +109,6 @@ header {
   margin-bottom: 18px;
   font-size: 38px;
 }
-
-/* Page main and cards */
 
 .page-main {
   max-width: 1200px;
@@ -150,13 +145,6 @@ header {
   gap: 16px;
 }
 
-.card-graphic {
-  height: 160px;
-  border-radius: 8px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.1));
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
-}
-
 .card-content {
   padding: 6px 2px 0 2px;
 }
@@ -178,8 +166,13 @@ header {
   line-height: 1.4;
 }
 
-/* Footer */
+.card-link {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: bold;
+}
 
+/* --- FOOTER --- */
 .footer {
   margin-top: auto;
   padding: 1.5rem 0.4rem;
@@ -211,3 +204,43 @@ header {
   left: 100px;
 }
 
+/* --- CARD GRAPHICS / SVG --- */
+.card-graphic {
+  height: 160px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.1));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svg-graph {
+  width: 100%;
+  height: 100%;
+}
+
+/* Ašys */
+.axis {
+  stroke: rgba(255, 255, 255, 0.25);
+  stroke-width: 1;
+}
+
+/* Visos grafiko linijos */
+.graph {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+
+/* --- SPALVOS PAGAL FUNKCIJĄ --- */
+.line { stroke: #38bdf8; }       /* Tiesinė */
+.parabola { stroke: #a78bfa; }   /* Laipsninė / kvadratinė */
+.inverse { stroke: #fb7185; }    /* Atvirkštinio proporcingumo */
+.expo { stroke: #4ade80; }       /* Rodiklinė / eksponentinė */
+.log { stroke: #facc15; }        /* Logaritminė */
+.trig { stroke: #22d3ee; }       /* Trigonometrinė */
+.abs { stroke: #f472b6; }        /* Absoliutinė vertė */
