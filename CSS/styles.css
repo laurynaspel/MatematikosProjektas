@@ -45,7 +45,7 @@ body {
     background: var(--bg);
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 97vh;
 }
 
 /* Header / Nav */
@@ -109,7 +109,7 @@ header {
 
 #content {
   position: relative;
-  min-height: 84.5vh;
+  min-height: 84.9vh;
   display: flex;
   align-items: center;
   justify-content: center;
