@@ -15,7 +15,7 @@ label {
     color: var(--text2);
 }
 
-/* Fontas */
+/* Colors */
 
 :root {
   --bg-deep: #050607;
@@ -52,6 +52,7 @@ body {
 
 header {
   position: sticky;
+   height: 70px;
   top: 0;
   padding: 0.4rem 2rem;
   background: var(--secondary);
@@ -97,7 +98,7 @@ header {
 .logo-text {
   font-size: 1.5rem;
   font-weight: bold;
-  color: var(--text);
+  color: var(--text2);
   position: absolute;
   left: 100px;
   top: 20px;
@@ -108,12 +109,10 @@ header {
 
 #content {
   position: relative;
-  width: 100%;
-  min-height: 80vh;
+  min-height: 84.5vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 
 #content::before {
@@ -124,8 +123,6 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.75;
-  mix-blend-mode: normal;
 }
 
 #content::after {
