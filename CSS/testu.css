@@ -122,6 +122,7 @@ header {
   padding: 30px;
   border-radius: 15px;
   display: none;
+  font-size: 20px;
 }
 
 .screen.active {
@@ -129,6 +130,9 @@ header {
   flex-direction: column;
 }
 
+p{
+  margin-bottom: 5px;
+}
 h1,
 h2,
 h3 {
@@ -161,11 +165,38 @@ label {
 }
 
 button {
-  padding: 10px 22px;
+  padding: 15px 27px;
   margin: 10px;
-  font-size: 16px;
+  font-size: 22px;
   cursor: pointer;
   background-color: var(--text2);
+  filter: brightness(0.1);
+  border: none;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  filter: brightness(1.15);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.button-easy {
+  background-color: #45B500;
+  color: white;
+  text-shadow: black 1px 1px 7px;
+}
+
+.button-medium {
+  background-color: #FFBB01;
+  color: white;
+  text-shadow: black 1px 1px 7px;
+}
+
+.button-hard {
+  background-color: #FF0100;
+  color: white;
+  text-shadow: black 1px 1px 7px;
 }
 
 /* Footer */
