@@ -119,7 +119,7 @@ header {
   max-width: 1600px;
   margin: auto;
   background: var(--card);
-  padding: 30px;
+  padding: 40px;
   border-radius: 15px;
   display: none;
   font-size: 20px;
@@ -130,9 +130,10 @@ header {
   flex-direction: column;
 }
 
-p{
+p {
   margin-bottom: 5px;
 }
+
 h1,
 h2,
 h3 {
@@ -170,7 +171,6 @@ button {
   font-size: 22px;
   cursor: pointer;
   background-color: var(--text2);
-  filter: brightness(0.1);
   border: none;
   transition: transform 0.5s ease, filter 0.5s ease;
 }
@@ -182,18 +182,21 @@ button:hover {
 }
 
 .button-easy {
+  filter: brightness(0.1);
   background-color: #45B500;
   color: white;
   text-shadow: black 1px 1px 7px;
 }
 
 .button-medium {
+  filter: brightness(0.1);
   background-color: #FFBB01;
   color: white;
   text-shadow: black 1px 1px 7px;
 }
 
 .button-hard {
+  filter: brightness(0.1);
   background-color: #FF0100;
   color: white;
   text-shadow: black 1px 1px 7px;
