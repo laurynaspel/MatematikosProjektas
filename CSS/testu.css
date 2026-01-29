@@ -182,21 +182,21 @@ button:hover {
 }
 
 .button-easy {
-  filter: brightness(0.1);
+  filter: brightness(0.5);
   background-color: #45B500;
   color: white;
   text-shadow: black 1px 1px 7px;
 }
 
 .button-medium {
-  filter: brightness(0.1);
+  filter: brightness(0.5);
   background-color: #FFBB01;
   color: white;
   text-shadow: black 1px 1px 7px;
 }
 
 .button-hard {
-  filter: brightness(0.1);
+  filter: brightness(0.5);
   background-color: #FF0100;
   color: white;
   text-shadow: black 1px 1px 7px;
