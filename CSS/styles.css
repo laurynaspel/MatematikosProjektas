@@ -45,7 +45,7 @@ body {
     background: var(--bg);
     display: flex;
     flex-direction: column;
-    min-height: 97vh;
+    min-height: 100vh;
 }
 
 /* Header / Nav */
@@ -100,8 +100,7 @@ header {
   font-weight: bold;
   color: var(--text2);
   position: absolute;
-  left: 100px;
-  top: 20px;
+  left: 80px;
 }
 
 
@@ -109,7 +108,7 @@ header {
 
 #content {
   position: relative;
-  min-height: 84.9vh;
+  min-height: 89.1vh;
   display: flex;
   align-items: center;
   justify-content: center;
