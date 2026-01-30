@@ -90,8 +90,7 @@ header {
   font-weight: bold;
   color: var(--text2);
   position: absolute;
-  left: 100px;
-  top: 20px;
+  left: 80px;
 }
 
 /* --- MAIN PAGE --- */
