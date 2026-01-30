@@ -1,7 +1,7 @@
 // Funkcijų vizualizatorius
 
 
-let currentFunction = "exp";
+let currentFunction = "power";
 
 const aRange = document.getElementById("aRange");
 const bRange = document.getElementById("bRange");
@@ -35,10 +35,10 @@ function getFormula(a, b) {
       return `y = ${a}x + ${b}`;
     case "quadratic":
       return `y = ${a}x² + ${b}`;
-    case "sin":
-      return `y = ${a}·sin(x) + ${b}`;
-    case "exp":
-      return `y = ${a}·e<sup>x</sup> + ${b}`;
+    case "log":
+      return `y = ${a}·log(x) + ${b}`;
+    case "power":
+      return `y = ${a}·x^${b}`;
   }
 }
 
@@ -140,18 +140,60 @@ function drawGrid() {
 
 function evalFunction(x, a, b) {
   switch (currentFunction) {
-    case 'linear': return a * x + b;
-    case 'quadratic': return a * x * x + b;
-    case 'sin': return a * Math.sin(x) + b;
-    case 'exp': return a * Math.exp(x) + b;
+  case 'linear': return a * x + b;
+  case 'quadratic': return a * x * x + b;
+  case 'log': return (x <= 0) ? NaN : a * Math.log(x) + b;
+  case 'power': {
+    if (x < 0 && Math.abs(b % 1) > 1e-9) return NaN;
+    return a * Math.pow(x, b);
   }
+  }
+}
+
+function drawAxes() {
+  const { xMin, xMax, yMin, yMax } = graph;
+  ctx.save();
+  ctx.strokeStyle = '#062626';
+  ctx.fillStyle = '#062626';
+  ctx.lineWidth = 2;
+
+  // X axis
+  if (yMin <= 0 && yMax >= 0) {
+    const y0 = yToCanvas(0);
+    ctx.beginPath();
+    ctx.moveTo(xToCanvas(xMin), y0);
+    ctx.lineTo(xToCanvas(xMax), y0);
+    ctx.stroke();
+    const ax = xToCanvas(xMax);
+    ctx.beginPath();
+    ctx.moveTo(ax - 10, y0 - 6);
+    ctx.lineTo(ax, y0);
+    ctx.lineTo(ax - 10, y0 + 6);
+    ctx.fill();
+  }
+
+  // Y axis
+  if (xMin <= 0 && xMax >= 0) {
+    const x0 = xToCanvas(0);
+    ctx.beginPath();
+    ctx.moveTo(x0, yToCanvas(yMin));
+    ctx.lineTo(x0, yToCanvas(yMax));
+    ctx.stroke();
+    const ay = yToCanvas(yMax);
+    ctx.beginPath();
+    ctx.moveTo(x0 - 6, ay + 10);
+    ctx.lineTo(x0, ay);
+    ctx.lineTo(x0 + 6, ay + 10);
+    ctx.fill();
+  }
+
+  ctx.restore();
 }
 
 function draw() {
   // sync sizes
   graph.width = canvas.width = canvas.clientWidth || canvas.width;
   graph.height = canvas.height = canvas.clientHeight || canvas.height;
-  // adjust padding by computed border width so content sits inside frame
   const style = getComputedStyle(canvas);
   const border = parseInt(style.borderLeftWidth || '0', 10);
   graph.padding = Math.max(20, 28 + border);
@@ -161,21 +203,32 @@ function draw() {
   const a = Number(aRange.value);
   const b = Number(bRange.value);
 
-  // draw curve
+  
   ctx.beginPath();
-  let first = true;
+  let started = false;
   ctx.lineWidth = 3;
   ctx.strokeStyle = '#ff8a3d';
   for (let px = 0; px <= graph.width; px++) {
     const x = graph.xMin + (px / graph.width) * (graph.xMax - graph.xMin);
     let y = evalFunction(x, a, b);
-    // clamp y to drawing area for continuity
+    if (!isFinite(y) || Number.isNaN(y)) {
+      // break the path on invalid points
+      started = false;
+      continue;
+    }
     const cx = xToCanvas(x);
     const cy = yToCanvas(y);
-    if (first) { ctx.moveTo(cx, cy); first = false; }
-    else ctx.lineTo(cx, cy);
+    if (!started) {
+      ctx.moveTo(cx, cy);
+      started = true;
+    } else {
+      ctx.lineTo(cx, cy);
+    }
   }
   ctx.stroke();
+
+  // draw axis arrows on top
+  drawAxes();
 }
 
 // Redraw when theme changes
@@ -185,7 +238,7 @@ document.getElementById('themeToggle').addEventListener('click', () => {
 
 // initial draw
 window.addEventListener('load', () => {
-  // resize canvas to CSS pixels
+  
   const rect = canvas.getBoundingClientRect();
   canvas.width = Math.round(rect.width);
   canvas.height = Math.round(rect.height);
